@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(rgb(238, 130, 238) 10%,indigo 20%, blue 30%, green 40%, yellow 50% ,orange 60%, red 70%);
+        }
+        .container{
+            text-align: center;
+            height: 80vh;
+            width: 30vw;
+            background: radial-gradient(at center, rgba(214, 202, 202, 0.05),rgb(224, 217, 217, 0.5));
+            border-radius: 10px;
+        }
+        .container h1{
+            margin: 15px;
+        }
+        input{
+            height: 40px;
+            width: 300px;
+            margin: 15px;
+            font-size: 20px;
+            font-weight: 650;
+            border: none;
+            outline: none;
+            padding: 15px;
+            background: white;
+        }
+        button{
+            margin: 10px;
+            padding: 10px 25px;
+            cursor: pointer;
+            font-size: 20px;
+            background: rgb(243, 175, 165);
+            border: none;
+            outline: none;
+            box-shadow: 0 2px 3px rosybrown;
+        }
+        h2{ 
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Interest Calculator</h1>
+        <div class="inbox">
+            <input type="number" id="amount" class="amount" placeholder="Enter Total Amount">
+            <input type="number" id="time" class="time" placeholder="Enter Time">
+            <input type="number" id="rate" class="rate" placeholder="Enter Total Rate">
+            <button onclick="Calculate()">Calculate</button>
+            <h2 id="result"></h2>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function Calculate()
+    {
+        let amount=document.getElementById('amount').value;
+        let time=document.getElementById('time').value;
+        let rate=document.getElementById('rate').value;
+        let I=(amount*time*rate)/100;
+        document.getElementById('result').innerHTML=" Total Simple Interest :"+I;
+
+    }
+</script>
+</html>
